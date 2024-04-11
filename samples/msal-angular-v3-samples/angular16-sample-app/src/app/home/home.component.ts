@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private authService: MsalService, private msalBroadcastService: MsalBroadcastService) { }
 
   ngOnInit(): void {
+    //The auth service is initialized in the component. It's not initalized explicitly.
     this.msalBroadcastService.msalSubject$
       .pipe(
         filter((msg: EventMessage) => msg.eventType === EventType.LOGIN_SUCCESS),
